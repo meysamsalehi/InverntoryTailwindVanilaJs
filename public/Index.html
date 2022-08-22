@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./build/tailwind.css">
+
+    <title>Document</title>
+</head>
+
+<body dir="rtl">
+    <div class="bg-slate-800 min-h-screen min-w-screen">
+        <!-- app bar -->
+
+        <div class="flex justify-center items-center gap-x-4 h-12 bg-slate-700">
+            <h2 class="text-slate-300">پروژه انبارداری با جاوا اسکریپت و تیلویند</h2>
+            <div
+                class="bg-slate-500 flex justify-center items-center w-7 h-7 rounded-full border-2 border-slate-400 text-slate-300 font-bold">
+                7
+            </div>
+        </div>
+
+        <!-- content bar => category -->
+
+        <div class="container rounded-xl max-w-md mx-auto mt-8">
+            <button class="bg-slate-400 text-slate-300 rounded p-1" id="category-btn-toggle">افزودن دسته بندی</button>
+
+        </div>
+
+        <div class="hidden" id="category-wrapper">
+
+            <div class=" container rounded-xl max-w-md mx-auto mt-8">
+                <h2 class="mb-3 text-slate-400 font-bold">افزودن دسته بندی جدید</h2>
+
+                <div>
+                    <form class="flex flex-col justify-center items-stretch gap-y-4  bg-slate-700 rounded-xl p-4 ">
+
+                        <div>
+                            <label for="category-title" class="block text-slate-400 mb-2">عنوان دسته بندی</label>
+                            <input type="text"
+                                class="bg-transparent bg-slate-300 rounded-xl border border-slate-300 text-slate-400 w-full"
+                                id="category-title" name="category-title">
+                        </div>
+
+
+                        <div>
+                            <label for="category-description" class="block text-slate-400 mb-2">توضیحات دسته
+                                بندی</label>
+                            <textarea
+                                class="bg-transparent bg-slate-300 rounded-xl border border-slate-300 text-slate-400 w-full"
+                                id="category-description" name="category-description"></textarea>
+                        </div>
+
+
+                        <div class="flex justify-between items-center gap-x-4">
+                            <button id="addNewCategoryBtn"
+                                class="flex-1 bg-slate-400 text-slate-300 rounded-xl  py-2">ثبت</button>
+                            <button id="cancelCategoryAdd"
+                                class=" flex-1 border border-slate-400 text-slate-300 rounded-xl py-2 ">لغو</button>
+                        </div>
+                </div>
+
+                </form>
+            </div>
+        </div>
+
+        <!-- content bar => product -->
+
+
+        <div class=" container rounded-xl max-w-md mx-auto mt-8">
+            <h2 class="mb-3 text-slate-400 font-bold">افزودن محصول جدید</h2>
+
+
+
+
+            <div>
+
+
+
+                <form class="flex flex-col justify-center items-stretch gap-y-4  bg-slate-700 rounded-xl p-4 ">
+
+
+
+
+                    <div>
+                        <label for="product-title" class="block text-slate-400 mb-2">عنوان محصول</label>
+                        <input type="text"
+                            class="bg-transparent bg-slate-300 rounded-xl border border-slate-300 text-slate-400 w-full"
+                            id="product-title" name="product-title">
+                    </div>
+
+
+                    <div>
+                        <label for="product-quantity" class="block text-slate-400 mb-2">تعداد محصول</label>
+                        <input type="number"
+                            class="bg-transparent bg-slate-300 rounded-xl border border-slate-300 text-slate-400 w-full"
+                            id="product-quantity" name="product-quantity">
+                    </div>
+
+                    <div>
+                        <label for="product-category" class="block text-slate-400 mb-2"> دسته بندی محصول</label>
+                        <select name="product-category" id="product-category"
+                            class="bg-transparent bg-slate-300 rounded-xl border border-slate-300 text-slate-800 py-2 w-full">
+
+                        </select>
+                    </div>
+
+
+
+                    <div class="flex justify-between items-center">
+                        <button id="addNewProductBtn"
+                            class=" flex-1 bg-slate-400 text-slate-800 rounded-xl py-2">ثبت</button>
+
+                    </div>
+            </div>
+
+            </form>
+        </div>
+
+
+
+        <div class=" container rounded-xl max-w-md mx-auto mt-8">
+
+
+
+
+            <h2 class="mb-3 text-slate-400 font-bold">لیست محصولات </h2>
+
+            <div class="flex justify-between items-center mb-4">
+
+                <label for="search-input" class="block text-slate-400 mb-2"> جستجو</label>
+                <input type="text"
+                    class="bg-transparent bg-slate-300 rounded-xl border border-slate-300 text-slate-400 w-1/2"
+                    id="search-input" name="search-input">
+            </div>
+
+            <div class="flex justify-between items-center mb-4">
+
+                <label for="sort-input" class="block text-slate-400 mb-2"> مرتب سازی</label>
+                <select name="sort-input" id="sort-input"
+                    class="bg-transparent bg-slate-300 rounded-xl border border-slate-300 text-slate-400 w-1/3">
+                    <option value="">انتخاب کنید</option>
+                    <option value="newest" selected>جدیدترین</option>
+                    <option value="oldest">قدیمی ترین</option>
+                </select>
+            </div>
+
+
+            <div id="products-list">
+
+
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+    </div>
+
+    <script src="/src/js/App.js" type="module"></script>
+
+</body>
+
+</html>
